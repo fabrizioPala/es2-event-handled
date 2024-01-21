@@ -1,10 +1,9 @@
 import { Counter } from "./Counter";
-import { HelloWorld } from "./HelloWorld";
-import { Welcome } from "./Welcome";
-export function App(){
+
+export function App() {
     return (
         <div>
-            <Counter/>
+            <Counter decrementAmount={1} initialValue={0} />
         </div>
-    )
+    );
 }
