@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
 export function Counter({ decrementAmount = 1, initialValue = 0 }) {
     const [counter, setCounter] = useState(initialValue);
+    useEffect(()=>{
+        console.log("i've been mounted")
+    },[])
+    useEffect(()=> {
+        console.log(counter)
+    }, [counter, initialValue])
 
     function handleIncrementButton() {
         setCounter(prevValue => prevValue + 1);
